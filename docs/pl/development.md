@@ -1,6 +1,6 @@
 # Budowanie, Wgrywanie i OTA
 
-[Start](../../README.pl.md) | [English](../en/development.md)
+[Start](../../README.md) | [English](../en/development.md)
 
 ## Przygotowanie
 

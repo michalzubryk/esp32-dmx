@@ -1,6 +1,6 @@
 # User Guide: Profiles, Scenes and Operation
 
-[Home](../../README.md) | [Polski](../pl/guide.md)
+[Home](../../README.en.md) | [Polski](../pl/guide.md)
 
 ## Start and Networking
 

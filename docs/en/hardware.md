@@ -1,6 +1,6 @@
 # Hardware and Wiring
 
-[Home](../../README.md) | [Polski](../pl/hardware.md)
+[Home](../../README.en.md) | [Polski](../pl/hardware.md)
 
 ## Parts
 

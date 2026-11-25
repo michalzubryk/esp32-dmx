@@ -1,6 +1,6 @@
 # HTTP API i Art-Net
 
-[Start](../../README.pl.md) | [English](../en/api.md)
+[Start](../../README.md) | [English](../en/api.md)
 
 Domyslna baza AP: `http://192.168.44.1`. Komendy zmieniaja rzeczywiste wyjscie. HTTP 200 potwierdza odbior przez modul, nie przez lampe.
 

@@ -1,6 +1,6 @@
 # HTTP API and Art-Net
 
-[Home](../../README.md) | [Polski](../pl/api.md)
+[Home](../../README.en.md) | [Polski](../pl/api.md)
 
 Base URL on a fresh AP: `http://192.168.44.1`. API commands change real outputs. Examples assume a test fixture with a known profile. HTTP 200 acknowledges the node, not the fixture.
 

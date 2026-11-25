@@ -1,6 +1,6 @@
 # Sprzet i Polaczenia
 
-[Start](../../README.pl.md) | [English](../en/hardware.md)
+[Start](../../README.md) | [English](../en/hardware.md)
 
 ## Elementy
 

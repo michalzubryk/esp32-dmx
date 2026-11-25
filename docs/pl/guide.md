@@ -1,6 +1,6 @@
 # Instrukcja: Profile, Sceny i Obsluga
 
-[Start](../../README.pl.md) | [English](../en/guide.md)
+[Start](../../README.md) | [English](../en/guide.md)
 
 ## Uruchomienie i Siec
 

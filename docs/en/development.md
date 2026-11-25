@@ -1,6 +1,6 @@
 # Build, Flash, OTA and Development
 
-[Home](../../README.md) | [Polski](../pl/development.md)
+[Home](../../README.en.md) | [Polski](../pl/development.md)
 
 ## Setup
 

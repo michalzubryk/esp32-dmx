@@ -1,69 +1,69 @@
 # ESP32-DMX
 
-[Polski](README.pl.md) | **English**
+**Polski** | [English](README.en.md)
 
-An ESP32 Art-Net to DMX512 node with a built-in web application, fixture profiles, scene programming, Wi-Fi, optional Ethernet and browser-based OTA updates. No cloud service is required.
+Sterownik ESP32 Art-Net → DMX512 z wbudowana aplikacja WWW, profilami urzadzen, programatorem scen, Wi-Fi, opcjonalnym Ethernetem i aktualizacja OTA przez przegladarke. Nie wymaga chmury.
 
-![Web control panel](docs/images/live-desktop.png)
+![Panel sterowania WWW](docs/images/live-desktop.png)
 
-## Features
+## Funkcje
 
-- One DMX512 output universe: 512 channels, 250 kbaud, 8N2, continuously transmitted from a buffered UART task.
-- Art-Net ArtDMX input and ArtPoll discovery over UDP 6454; configurable zero-based universe.
-- Wi-Fi access point and station operation; LAN8720 Ethernet on ESP32-ETH01, including optional automatic Wi-Fi fallback.
-- Responsive web panel: Start, Live, Programs, Monitor and Configuration.
-- **Fixture profile management:** built-in RGBW, RAW and 10-channel laser profiles; custom channel labels, value ranges, defaults, named scenes and fixture blackout values.
-- **Import/export fixture profiles as JSON.** Imported profiles are stored in ESP32 NVS and remain available after reboot and from another browser.
-- **Scene/program management:** record channel states, edit or remove steps, select fixture addresses and profiles, set step durations, loop playback and save/load named programs in browser localStorage.
-- **Named scenes inside fixture profiles:** reuse preset channel arrays and distribute them with exported profiles.
-- Pattern catalog: give raw pattern-channel values descriptive names and store them in the device profile.
-- HTTP API for direct channel ranges, profiles, status, demos, configuration and updates.
-- Browser OTA firmware upload, live counters and diagnostic logs.
-- Optional Docker Art-Net tester in [`artnet-tester`](artnet-tester/README.md).
+- Jedno wyjscie DMX512: 512 kanalow, 250 kbaud, 8N2, stale nadawanie bufora przez osobne zadanie UART.
+- Odbior ArtDMX i wykrywanie ArtPoll przez UDP 6454; konfigurowalne universe liczone od zera.
+- Wi-Fi AP i STA; Ethernet LAN8720 na ESP32-ETH01 oraz wariant z automatycznym awaryjnym Wi-Fi.
+- Responsywny panel: Start, Live, Programy, Monitor i Konfiguracja.
+- **Zarzadzanie profilami urzadzen:** RGBW, RAW i laser 10CH; nazwy kanalow, zakresy wartosci, ustawienia domyslne, nazwane sceny i blackout urzadzenia.
+- **Import i eksport profili JSON.** Importowane profile sa zapisywane w NVS ESP32: pozostaja po restarcie i sa dostepne na innym telefonie lub komputerze.
+- **Zarzadzanie scenami i programami:** nagrywanie stanu kanalow, edycja i usuwanie krokow, wybor adresu i profilu, czas kroku, petle oraz zapis/odczyt nazwanych programow w localStorage przegladarki.
+- **Sceny w profilach urzadzen:** nazwane presety kanalow mozna wywolywac z panelu i przenosic razem z plikiem profilu.
+- Katalog wzorow: opis wartosci kanalu wzoru jest zapisywany razem z profilem w module.
+- HTTP API do kanalow, profili, statusu, demo, konfiguracji i aktualizacji.
+- Aktualizacja firmware OTA przez WWW, liczniki i logi diagnostyczne.
+- Dodatkowy [tester Art-Net w Dockerze](artnet-tester/README.md).
 
-## Quick Start
+## Szybki Start
 
-1. Wire a **3.3 V MAX3485-compatible RS485 transmitter** using the [hardware guide](docs/en/hardware.md). ETH01 uses a different direction pin.
-2. Install PlatformIO and build/upload the environment matching your board:
+1. Podlacz nadajnik RS485 zgodny z **MAX3485 3,3 V** wedlug [schematu](docs/pl/hardware.md). ETH01 ma inny pin kierunku.
+2. Zainstaluj PlatformIO i zbuduj/wgraj wariant swojej plytki:
 
    ```sh
    pio run -e esp32-c3-devkitm-1
    pio run -e esp32-c3-devkitm-1 -t upload --upload-port /dev/ttyUSB0
    ```
 
-3. Join `DMX-Node-C3-XXXX`, initial password `dmx12345`.
-4. Open **http://192.168.44.1/**. Change the AP password and configure networking in Configuration.
-5. Set the physical fixture to DMX mode. In Live select its profile and matching start address, then apply channel values.
+3. Polacz sie z `DMX-Node-C3-XXXX`, haslo poczatkowe `dmx12345`.
+4. Otworz **http://192.168.44.1/**. Zmien haslo AP i ustaw siec w Konfiguracji.
+5. Wlacz tryb DMX na lampie. W Live wybierz profil i zgodny adres startowy, ustaw wartosci i kliknij Ustaw.
 
-Defaults apply to a fresh device; existing NVS configuration survives firmware updates. Wi-Fi station credentials are intentionally blank in this public source.
+To ustawienia nowego modulu. Istniejaca konfiguracja NVS pozostaje po OTA. Publiczny kod nie zawiera danych prywatnego Wi-Fi.
 
-## Screenshots
+## Zrzuty Panelu
 
-These are actual firmware UI renders using an offline mock backend, not photographs of connected fixtures. The interface currently uses Polish labels; documentation is available in both languages.
+Zrzuty pokazuja rzeczywisty interfejs firmware z lokalnym symulatorem API. Nie przedstawiaja odczytu podlaczonych lamp. Obecny interfejs ma polskie etykiety, a dokumentacja jest polska i angielska.
 
-| Laser profile and pattern catalog | Scene programmer |
+| Profil lasera i katalog wzorow | Programator scen |
 | --- | --- |
-| ![Laser profile](docs/images/laser-desktop.png) | ![Programs](docs/images/programs-desktop.png) |
+| ![Laser](docs/images/laser-desktop.png) | ![Programy](docs/images/programs-desktop.png) |
 
-| Configuration and profile import | Mobile controls |
+| Konfiguracja i import profili | Sterowanie mobilne |
 | --- | --- |
-| ![Configuration](docs/images/config-desktop.png) | ![Mobile](docs/images/live-mobile.png) |
+| ![Konfiguracja](docs/images/config-desktop.png) | ![Telefon](docs/images/live-mobile.png) |
 
-## Documentation
+## Dokumentacja
 
-| Topic | English | Polski |
+| Temat | Polski | English |
 | --- | --- | --- |
-| Operation, profiles, scenes and troubleshooting | [User guide](docs/en/guide.md) | [Instrukcja](docs/pl/guide.md) |
-| Wiring and board variants | [Hardware](docs/en/hardware.md) | [Sprzet](docs/pl/hardware.md) |
-| HTTP API and Art-Net | [API reference](docs/en/api.md) | [Dokumentacja API](docs/pl/api.md) |
-| Build, USB upload and OTA | [Development](docs/en/development.md) | [Budowanie i OTA](docs/pl/development.md) |
+| Obsluga, profile, sceny, diagnostyka | [Instrukcja](docs/pl/guide.md) | [User guide](docs/en/guide.md) |
+| Polaczenia i warianty plytek | [Sprzet](docs/pl/hardware.md) | [Hardware](docs/en/hardware.md) |
+| HTTP API i Art-Net | [API](docs/pl/api.md) | [API reference](docs/en/api.md) |
+| Kompilacja, USB i OTA | [Budowanie](docs/pl/development.md) | [Development](docs/en/development.md) |
 
-![Wiring diagram](docs/images/wiring.svg)
+![Schemat polaczen](docs/images/wiring.svg)
 
-## Scope and Limitations
+## Ograniczenia
 
-The firmware does not discover fixture patches through DMX or implement RDM. Profiles describe devices; their addresses must match the physical fixtures. Browser program playback needs the page to remain open. Imported profile scenes persist in NVS, while named timeline programs are stored in the current browser. DMX output holds its last buffered values when a controller stops sending; do not assume signal-loss blackout. Concurrent HTTP, Art-Net and demo writers have no priority/merge arbitration.
+Firmware nie odczytuje patcha lamp po DMX i nie implementuje RDM. Adres w panelu musi zgadzac sie z fizycznym urzadzeniem. Programator dziala w otwartej przegladarce. Profile ze scenami sa trwale w NVS; nazwane programy krokowe sa zapisane lokalnie w przegladarce. Po zakonczeniu transmisji modul utrzymuje ostatnie wartosci DMX: nie ma automatycznego blackoutu przy utracie kontrolera. HTTP, Art-Net i demo nie maja arbitrazu priorytetow ani scalania.
 
-HTTP control, configuration, profile storage and OTA have no application authentication or TLS. Keep the node on a trusted lighting network and do not expose it directly to the Internet. Use appropriate electrical isolation for production DMX installations. Laser fixtures require suitable beam termination and operation outside occupied viewing areas; this project is not a laser safety controller.
+API, konfiguracja i OTA nie maja uwierzytelniania ani TLS. Uzywaj zaufanej sieci oswietleniowej, bez publicznego przekierowania portow. Do instalacji scenicznych zastosuj izolacje i zabezpieczenia RS485. Projekt nie jest sterownikiem bezpieczenstwa lasera; wiazka musi byc bezpiecznie zakonczona poza obszarem przebywania ludzi.
 
-Firmware version: **1.1.0**. Generic laser pattern boundaries and CH10 effect names are deliberately not presented as a verified manufacturer map.
+Wersja firmware: **1.1.0**. Granice 51 wzorow i nazwy efektow CH10 nie sa potwierdzona mapa producenta.
