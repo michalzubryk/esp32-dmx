@@ -1,0 +1,248 @@
+{
+  "laser10": {
+    "type": "laser10",
+    "label": "Projektor lasera 10CH",
+    "short": "Laser 10CH",
+    "channels": 10,
+    "info": "51 wzorow: granice slotow niepotwierdzone. CH10: mapa efektow nieustalona.",
+    "labels": [
+      "Tryb",
+      "Wzor / program",
+      "Obrot",
+      "Przechylenie poziome",
+      "Przechylenie pionowe",
+      "Pozycja pozioma",
+      "Pozycja pionowa",
+      "Rozmiar",
+      "Kolor",
+      "Rysowanie"
+    ],
+    "defaults": [
+      0,
+      150,
+      64,
+      64,
+      64,
+      64,
+      64,
+      0,
+      0,
+      0
+    ],
+    "blackout": {
+      "1": 0
+    },
+    "ranges": [
+      [
+        {
+          "label": "Off",
+          "min": 0,
+          "max": 63
+        },
+        {
+          "label": "Reczny",
+          "min": 64,
+          "max": 127
+        },
+        {
+          "label": "AUTO",
+          "min": 128,
+          "max": 191
+        },
+        {
+          "label": "Sound",
+          "min": 192,
+          "max": 255
+        }
+      ],
+      [
+        {
+          "label": "Program 1",
+          "min": 0,
+          "max": 63
+        },
+        {
+          "label": "Program 2",
+          "min": 64,
+          "max": 127
+        },
+        {
+          "label": "Program 3",
+          "min": 128,
+          "max": 191
+        },
+        {
+          "label": "Program 4",
+          "min": 192,
+          "max": 255
+        }
+      ],
+      [
+        {
+          "label": "Kat",
+          "min": 0,
+          "max": 127
+        },
+        {
+          "label": "Obrot w przod",
+          "min": 128,
+          "max": 191
+        },
+        {
+          "label": "Obrot wstecz",
+          "min": 192,
+          "max": 255
+        }
+      ],
+      [
+        {
+          "label": "Pozycja",
+          "min": 0,
+          "max": 127
+        },
+        {
+          "label": "Ruch automatyczny",
+          "min": 128,
+          "max": 255
+        }
+      ],
+      [
+        {
+          "label": "Pozycja",
+          "min": 0,
+          "max": 127
+        },
+        {
+          "label": "Ruch automatyczny",
+          "min": 128,
+          "max": 255
+        }
+      ],
+      [
+        {
+          "label": "Pozycja",
+          "min": 0,
+          "max": 127
+        },
+        {
+          "label": "Ruch automatyczny",
+          "min": 128,
+          "max": 255
+        }
+      ],
+      [
+        {
+          "label": "Pozycja",
+          "min": 0,
+          "max": 127
+        },
+        {
+          "label": "Ruch automatyczny",
+          "min": 128,
+          "max": 255
+        }
+      ],
+      [
+        {
+          "label": "Rozmiar statyczny",
+          "min": 0,
+          "max": 63
+        },
+        {
+          "label": "Animowane skalowanie",
+          "min": 64,
+          "max": 255
+        }
+      ],
+      [
+        {
+          "label": "Pojedynczy",
+          "min": 0,
+          "max": 63
+        },
+        {
+          "label": "Mieszany",
+          "min": 64,
+          "max": 127
+        },
+        {
+          "label": "Pojedynczy auto",
+          "min": 128,
+          "max": 191
+        },
+        {
+          "label": "Mieszany auto",
+          "min": 192,
+          "max": 255
+        }
+      ],
+      []
+    ],
+    "scenes": {
+      "Dwa kolka": [
+        100,
+        150,
+        64,
+        64,
+        64,
+        64,
+        64,
+        0,
+        0,
+        0
+      ],
+      "Wzor 50": [
+        100,
+        50,
+        64,
+        64,
+        64,
+        64,
+        64,
+        0,
+        0,
+        0
+      ],
+      "Wzor 100": [
+        100,
+        100,
+        64,
+        64,
+        64,
+        64,
+        64,
+        0,
+        0,
+        0
+      ],
+      "AUTO 1": [
+        128,
+        0,
+        64,
+        64,
+        64,
+        64,
+        64,
+        0,
+        0,
+        0
+      ],
+      "Sound 1": [
+        192,
+        0,
+        64,
+        64,
+        64,
+        64,
+        64,
+        0,
+        0,
+        0
+      ]
+    },
+    "patternChannel": 2,
+    "patterns": {
+      "150": "Dwa kolka"
+    }
+  }
+}

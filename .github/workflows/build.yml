@@ -1,0 +1,22 @@
+name: Build firmware
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  firmware:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        environment: [esp32-c3-devkitm-1, esp32s, esp32-s3, esp32-eth01, esp32-eth01-ethonly, esp32-eth01-autonet, esp32-eth01-phy0]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install platformio
+      - run: pio run -e ${{ matrix.environment }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: firmware-${{ matrix.environment }}
+          path: .pio/build/${{ matrix.environment }}/firmware.bin

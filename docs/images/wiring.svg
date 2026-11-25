@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="500" viewBox="0 0 1100 500">
+<rect width="1100" height="500" fill="#f5f7fa"/>
+<g font-family="sans-serif" fill="#17212b">
+<text x="36" y="40" font-size="25" font-weight="bold">ESP32-DMX / MAX3485 / XLR</text>
+<text x="36" y="68" font-size="15">Output wiring / Polaczenia wyjscia — 3.3 V logic</text>
+<g fill="white" stroke="#8795a4" stroke-width="2"><rect x="36" y="105" width="260" height="280" rx="6"/><rect x="425" y="105" width="270" height="280" rx="6"/><rect x="825" y="105" width="235" height="280" rx="6"/></g>
+<text x="56" y="140" font-size="21" font-weight="bold">ESP32 / C3 / S3</text>
+<text x="56" y="180" font-size="17">GPIO4: TX</text><text x="56" y="225" font-size="17">GPIO5: DE</text>
+<text x="56" y="249" font-size="14" fill="#b23d3d">ETH01: GPIO33 for DE</text>
+<text x="56" y="290" font-size="17">3V3</text><text x="56" y="340" font-size="17">GND</text>
+<text x="445" y="140" font-size="21" font-weight="bold">MAX3485</text>
+<text x="445" y="180" font-size="17">DI (module RX)</text><text x="445" y="225" font-size="17">DE / EN</text><text x="445" y="290" font-size="17">VCC</text><text x="445" y="340" font-size="17">GND</text>
+<text x="625" y="180" font-size="17">D+</text><text x="625" y="225" font-size="17">D-</text>
+<text x="845" y="140" font-size="21" font-weight="bold">DMX OUT</text>
+<text x="845" y="180" font-size="17">XLR pin 3: D+</text><text x="845" y="225" font-size="17">XLR pin 2: D-</text><text x="845" y="340" font-size="17">XLR pin 1: common</text>
+<g fill="none" stroke-width="3"><path d="M296 175H425" stroke="#238254"/><path d="M296 220H425" stroke="#a37815"/><path d="M296 285H425" stroke="#bc4141"/><path d="M296 335H425" stroke="#536272"/><path d="M695 175H825" stroke="#238254"/><path d="M695 220H825" stroke="#397eb8"/><path d="M695 335H825" stroke="#536272"/></g>
+<text x="36" y="425" font-size="16">120 ohm termination between XLR 2 and 3 at the last fixture / Terminator na ostatnim urzadzeniu.</text>
+<text x="36" y="453" font-size="15">Verify A/B polarity using your module datasheet. ESP board EN is reset, not RS485 direction.</text>
+<text x="36" y="478" font-size="15">Sprawdz polaryzacje A/B. EN na plytce ESP oznacza reset. To schemat pogladowy, nie izolowany interfejs.</text>
+</g></svg>

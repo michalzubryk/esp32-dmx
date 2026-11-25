@@ -1,0 +1,11 @@
+services:
+  artnet-tester:
+    build: .
+    network_mode: host
+    environment:
+      ARTNET_TARGET: "${ARTNET_TARGET:-192.168.44.1}"
+      ARTNET_UNIVERSE: "${ARTNET_UNIVERSE:-0}"
+      HTTP_PORT: "${HTTP_PORT:-8080}"
+      DPX_ADDRESS: "${DPX_ADDRESS:-450}"
+      PIXEZOOM_ADDRESSES: "${PIXEZOOM_ADDRESSES:-100,107,114,121}"
+      PIXEZOOM_CHANNELS: "${PIXEZOOM_CHANNELS:-7}"

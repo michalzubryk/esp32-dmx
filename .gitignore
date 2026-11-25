@@ -1,0 +1,13 @@
+.pio/
+.platformio/
+.venv/
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example
+firmware.bin
+*.elf
+*.map
+node_modules/
+.DS_Store
