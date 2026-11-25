@@ -21,6 +21,22 @@ An ESP32 Art-Net to DMX512 node with a built-in web application, fixture profile
 - Browser OTA firmware upload, live counters and diagnostic logs.
 - Optional Docker Art-Net tester in [`artnet-tester`](artnet-tester/README.en.md).
 
+## Devices and Control Trials
+
+The project supports RGB/RGBW fixtures, lighting circuits through external DMX dimmer packs and other devices described by channel profiles. ESP32 sends DMX; it does not directly regulate mains voltage.
+
+| SHEHDS LED PAR 54 x 3 W RGBW | Robe Pointe |
+| --- | --- |
+| <a href="https://shehds.com/products/fast-shipping-led-54x3w-rgbw-led-flat-par-rgbw-color-mixing-dj-wash-light-stage-uplighting-ktv-disco-dj-dmx512"><img src="https://i.ebayimg.com/images/g/KkcAAOSw2Hdm5Vzl/s-l1200.jpg" alt="SHEHDS LED PAR 54x3W RGBW catalog photograph" width="280"></a> | <a href="https://www.robe.cz/pointe"><img src="https://cdn.aws.robe.cz/v1/image/resize/522fc31d583c077fe618dc267176f88d429255c2?fit=cover&amp;height=452&amp;width=452&amp;withoutEnlargement=false" alt="Robe Pointe official manufacturer photograph" width="280"></a> |
+| Project notes document **SHE-FS403A 7CH** testing: RGBW, dimmer, programs and strobe. The image illustrates the catalog family; verify the channel mode against your own fixture manual. | Response to **grandMA3 / OSC** control (`1 At 50`) was confirmed. This was a separate test path; this repository does not ship a Pointe profile or a grandMA3 OSC client. |
+| [Manufacturer product page](https://shehds.com/products/fast-shipping-led-54x3w-rgbw-led-flat-par-rgbw-color-mixing-dj-wash-light-stage-uplighting-ktv-disco-dj-dmx512) · [SHEHDS manuals](https://shehds.com/pages/user-manual-download) · [Photo source](https://www.ebay.com/itm/286060053321) | [Robe product page and documents](https://www.robe.cz/pointe) |
+
+**Generic laser projector 10CH:** pattern display, size changes and drawing modes were observed through this Art-Net/DMX node. The `laser10` profile and JSON example are included. Its brand/model remain unconfirmed, so no unrelated product photograph is assigned to it.
+
+**Dimmer packs:** the generic 6CH profile and Botex DPX-620 III tester demonstrate the control format for external dimmers; this is not a claim that a particular pack has been physically validated. [Test scope and sources](docs/en/devices.md).
+
+Catalog photographs are loaded from external websites and remain the property of their respective authors/manufacturers. They are not photographs of our installation and are not covered by the source-code MIT license. External offers and images may change.
+
 ## Quick Start
 
 1. Wire a **3.3 V MAX3485-compatible RS485 transmitter** using the [hardware guide](docs/en/hardware.md). ETH01 uses a different direction pin.

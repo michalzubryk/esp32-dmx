@@ -21,6 +21,22 @@ Sterownik ESP32 Art-Net → DMX512 z wbudowana aplikacja WWW, profilami urzadzen
 - Aktualizacja firmware OTA przez WWW, liczniki i logi diagnostyczne.
 - Dodatkowy [tester Art-Net w Dockerze](artnet-tester/README.md).
 
+## Urzadzenia i Proby Sterowania
+
+Projekt obsluguje lampy RGB/RGBW, obwody przez zewnetrzne sciemniacze DMX i inne urzadzenia opisane profilem kanalow. ESP32 wysyla DMX; nie steruje bezposrednio napieciem 230 V.
+
+| SHEHDS LED PAR 54 x 3 W RGBW | Robe Pointe |
+| --- | --- |
+| <a href="https://shehds.com/products/fast-shipping-led-54x3w-rgbw-led-flat-par-rgbw-color-mixing-dj-wash-light-stage-uplighting-ktv-disco-dj-dmx512"><img src="https://i.ebayimg.com/images/g/KkcAAOSw2Hdm5Vzl/s-l1200.jpg" alt="Zdjecie katalogowe SHEHDS LED PAR 54x3W RGBW" width="280"></a> | <a href="https://www.robe.cz/pointe"><img src="https://cdn.aws.robe.cz/v1/image/resize/522fc31d583c077fe618dc267176f88d429255c2?fit=cover&amp;height=452&amp;width=452&amp;withoutEnlargement=false" alt="Robe Pointe - oficjalne zdjecie producenta" width="280"></a> |
+| W projekcie opisano testy profilu **SHE-FS403A 7CH**: RGBW, dimmer, programy i strobe. Zdjecie przedstawia katalogowy model z tej rodziny; tryb kanalow sprawdz w instrukcji swojego egzemplarza. | Potwierdzono reakcje na sterowanie przez **grandMA3 / OSC** (`1 At 50`). To oddzielna sciezka testowa; repozytorium nie zawiera gotowego profilu Pointe ani klienta OSC do grandMA3. |
+| [Karta producenta](https://shehds.com/products/fast-shipping-led-54x3w-rgbw-led-flat-par-rgbw-color-mixing-dj-wash-light-stage-uplighting-ktv-disco-dj-dmx512) · [Instrukcje SHEHDS](https://shehds.com/pages/user-manual-download) · [Zrodlo zdjecia](https://www.ebay.com/itm/286060053321) | [Karta i dokumentacja Robe](https://www.robe.cz/pointe) |
+
+**Projektor lasera 10CH:** potwierdzono wyswietlanie wzorow, zmiany rozmiaru i sposobu rysowania przez ten modul Art-Net/DMX. Profil `laser10` i przyklad JSON sa w repozytorium. Marka i model projektora nie zostaly potwierdzone, dlatego nie przypisujemy mu zdjecia innego produktu.
+
+**Sciemniacze:** profil surowy 6CH i tester Botex DPX-620 III ilustruja sterowanie obwodami przez dimmer DMX; nie jest to deklaracja fizycznego przetestowania konkretnego sciemniacza. [Szczegoly prob i zrodla](docs/pl/devices.md).
+
+Zdjecia katalogowe sa ladowane ze stron zewnetrznych, a ich prawa pozostaja przy autorach/producentach. Nie sa zdjeciami naszej instalacji ani czescia licencji MIT kodu. Dostepnosc ofert i obrazow moze sie zmienic.
+
 ## Szybki Start
 
 1. Podlacz nadajnik RS485 zgodny z **MAX3485 3,3 V** wedlug [schematu](docs/pl/hardware.md). ETH01 ma inny pin kierunku.
